@@ -1,0 +1,6 @@
+# Install sudo and use visudo para habilitar o wheel
+# Install the dhcpcd and enable it
+# Set keymap to /etc/vconsole.conf
+# Use archlinux.org to generate the mirrorlist (BR and http)
+# Use pacman-contrib (rankmirrors) to sort them
+
