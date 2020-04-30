@@ -118,3 +118,6 @@ alias dev="cd ~/DevProjects && ll"
 alias pacmancache="yay -Sc"
 alias update="yay -Syyuu"
 alias dotfiles='/usr/bin/git --git-dir=/home/vinicius-devel/.dotfiles/ --work-tree=/home/vinicius-devel'
+
+# set key typing rate
+xset r rate 170 18
