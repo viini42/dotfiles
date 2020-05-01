@@ -14,7 +14,7 @@ gaps inner 25
 
 #autostart
 exec --no-startup-id hsetroot -center ~/.wallpaper.png
-exec --no-startup-id picom -b
+exec --no-startup-id picom --experimental-backends
 
 # start a terminal
 bindsym $super+Return exec i3-sensible-terminal
