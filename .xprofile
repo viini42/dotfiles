@@ -1,4 +1,5 @@
 export PATH="$HOME/.dotfiles/scripts:$HOME/Android/Sdk/platform-tools:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config/"
 export EDITOR=nvim
 export VISUAL=nvim
 
