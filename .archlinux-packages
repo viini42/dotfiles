@@ -31,6 +31,7 @@ avocode 4.6.2-1
 axel 2.17.8-1
 base 2-2
 bash 5.0.016-1
+bat 0.13.0-1
 bc 1.07.1-4
 binutils 2.34-2
 bison 3.5.4-1
@@ -82,6 +83,7 @@ expat 2.2.9-3
 extra-cmake-modules 5.69.0-1
 faad2 2.9.1-2
 fakeroot 1.24-2
+feh 3.4-1
 ffmpeg 1:4.2.2-6
 fftw 3.3.8-2
 figlet 2.2.5-3
@@ -305,6 +307,7 @@ libepoxy 1.5.4-1
 libev 4.33-1
 libevdev 1.9.0-1
 libevent 2.1.11-5
+libexif 0.6.21-3
 libfbclient 3.0.4.33054-1
 libffi 3.3-3
 libfontenc 1.1.4-1
@@ -539,6 +542,7 @@ python-packaging 20.3-1
 python-pep517 0.8.2-1
 python-pip 20.0.2-1
 python-progress 1.5-3
+python-pygments 2.6.1-2
 python-pyparsing 2.4.7-1
 python-pytoml 0.1.21-3
 python-requests 2.23.0-1
@@ -588,6 +592,7 @@ startup-notification 0.12-6
 steam 1.0.0.61-4
 sublime-text-dev 3.3211-1
 sudo 1.8.31.p1-1
+sxiv 26-1
 sysfsutils 2.1.0-11
 systemd 245.5-2
 systemd-libs 245.5-2
