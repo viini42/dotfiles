@@ -118,6 +118,8 @@ alias dev="cd ~/DevProjects && ll"
 alias pacmancache="yay -Sc"
 alias update="yay -Syyuu"
 alias dotfiles='/usr/bin/git --git-dir=/home/vinicius-devel/.dotfiles/ --work-tree=/home/vinicius-devel'
+alias vim="nvim"
+alias clock="tty-clock"
 
 # set key typing rate
 xset r rate 170 18
@@ -132,3 +134,12 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
+
+export LESS=-R
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
