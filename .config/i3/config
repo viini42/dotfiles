@@ -14,8 +14,7 @@ smart_gaps on
 #gaps outer 15
 
 #autostart
-exec --no-startup-id hsetroot -center ~/.wallpaper.png
-exec --no-startup-id picom --experimental-backends
+exec --no-startup-id picom --experimental-backends -b
 
 # start a terminal
 bindsym $super+Return exec i3-sensible-terminal
@@ -28,7 +27,7 @@ bindsym $super+d exec rofi -show drun
 
 # common apps keybinds
 bindsym Print exec flameshot gui
-bindsym $super+l exec i3lock -i ~/.wallpaper.png
+bindsym $super+l exec i3lock -i ~/.dotfiles/lock-wallpaper
 
 #change volume
 # using pamixer
@@ -129,6 +128,7 @@ bar {
 # window rules, you can find the window class using xprop
 for_window [class=".*"] border pixel 0
 for_window [class=Lxappearance] floating enable
+for_window [class=Sxiv] floating enable
 #assign [class=URxvt] 1
 #assign [class=Firefox|Transmission-gtk] 2
 #assign [class=Thunar|File-roller] 3
