@@ -40,5 +40,6 @@ alias update="yay -Syyuu"
 alias dotfiles='/usr/bin/git --git-dir=/home/vinicius-devel/.dotfiles/ --work-tree=/home/vinicius-devel'
 alias vim="nvim"
 alias clock="tty-clock"
+alias picomb="picom --experimental-backends -b"
 
 

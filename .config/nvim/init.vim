@@ -20,10 +20,18 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Powerline fonts to airline
-let g:airline_powerline_fonts = 1
-
 " This plugin was installed from <https://github.com/junegunn/vim-plug>
 call plug#begin()
-Plug 'vim-airline/vim-airline'
+" Lightline status line
+Plug 'itchyny/lightline.vim'
+
+" Fzf
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
+nnoremap <C-p> :Files<CR>
+nnoremap <C-o> :Buffers<CR>
+nnoremap <C-g> :GFiles<CR>
+nnoremap <C-r> :Rg! 
+nnoremap U :redo<CR>
+
 call plug#end()
