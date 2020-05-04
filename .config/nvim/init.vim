@@ -34,4 +34,8 @@ nnoremap <C-g> :GFiles<CR>
 nnoremap <C-r> :Rg! 
 nnoremap U :redo<CR>
 
+" Toml language support
+Plug 'cespare/vim-toml'
+
+Plug 'maralla/completor.vim'
 call plug#end()

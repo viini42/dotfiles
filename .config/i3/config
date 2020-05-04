@@ -1,17 +1,19 @@
+#i3 config file (v4)
+
 # set modifier
 set $super Mod4
 set $alt Mod1
 
 # set font
-font pango: JetBrains Mono 8
+font pango: JetBrains Mono 10
+
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
 # Gaps
 gaps inner 25
-smart_gaps on
-#gaps outer 15
+gaps outer 15
 
 #autostart
 exec --no-startup-id picom --experimental-backends -b
@@ -35,10 +37,10 @@ bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym XF86AudioMute exec pamixer -t
 
 # music control
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioStop exec mpc stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl prev
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
 
 # kill focused window
 bindsym $super+Shift+q kill
@@ -74,23 +76,35 @@ bindsym $super+space floating toggle
 # change focus between tiling / floating windows
 bindsym $super+Shift+space focus mode_toggle
 
+# names for workspaces
+# icons from <nerdfonts.com/cheat-sheet>
+set $ws1 " 1 ARCH  "
+set $ws2 " 2 WEB  "
+set $ws3 " 3 DEV  "
+set $ws4 " 4 TERM  "
+set $ws5 " 5 MEDIA ﱘ "
+set $ws6 " 6 MISC  "
+
+# programs
+exec_always --no-startup-id ~/.dotfiles/scripts/restart-picom.sh
+
 # switch to workspace
 bindsym $super+Control+Right workspace next
 bindsym $super+Control+Left workspace prev
-bindsym $super+1 workspace 1
-bindsym $super+2 workspace 2
-bindsym $super+3 workspace 3
-bindsym $super+4 workspace 4
-bindsym $super+5 workspace 5
-bindsym $super+6 workspace 6
+bindsym $super+1 workspace $ws1
+bindsym $super+2 workspace $ws2
+bindsym $super+3 workspace $ws3
+bindsym $super+4 workspace $ws4
+bindsym $super+5 workspace $ws5
+bindsym $super+6 workspace $ws6
 
 # move focused container to workspace
-bindsym $super+Shift+1 move container to workspace 1
-bindsym $super+Shift+2 move container to workspace 2
-bindsym $super+Shift+3 move container to workspace 3
-bindsym $super+Shift+4 move container to workspace 4
-bindsym $super+Shift+5 move container to workspace 5
-bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+1 move container to workspace $ws1
+bindsym $super+Shift+2 move container to workspace $ws2
+bindsym $super+Shift+3 move container to workspace $ws3
+bindsym $super+Shift+4 move container to workspace $ws4
+bindsym $super+Shift+5 move container to workspace $ws5
+bindsym $super+Shift+6 move container to workspace $ws6
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
@@ -113,20 +127,68 @@ mode "resize" {
 }
 bindsym $super+r mode "resize"
 
-# panel
-bar {
-        colors {
-        background #2f343f
-        statusline #2f343f
-        separator #4b5262
+bindsym $super+Shift+g mode "$mode_gaps"
 
-        # colour of border, background, and text
-        focused_workspace       #2f343f #bf616a #d8dee8
-        active_workspace        #2f343f #2f343f #d8dee8
-        inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspacei       #2f343f #ebcb8b #2f343f
-    }
-        status_command i3status
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# panel
+#bar {
+#        colors {
+#            background #2f343f
+#            statusline #2f343f
+#            separator #4b5262
+#
+#            # colour of border, background, and text
+#            focused_workspace       #2f343f #bf616a #d8dee8
+#            active_workspace        #2f343f #2f343f #d8dee8
+#            inactive_workspace      #2f343f #2f343f #d8dee8
+#            urgent_workspacei       #2f343f #ebcb8b #2f343f
+#        }
+#        status_command i3status
+#        
+#}
+
+bar {
+    status_command i3blocks    
+  colors {
+    separator #666666
+    background #222222
+    statusline #dddddd
+    focused_workspace #0088CC #0088CC #ffffff 
+    active_workspace #333333 #333333 #ffffff 
+    inactive_workspace #333333 #333333 #888888 
+    urgent_workspace #2f343a #900000 #ffffff 
+  }
 }
 
 # window rules, you can find the window class using xprop
@@ -144,9 +206,9 @@ for_window [class=Sxiv] floating enable
 #for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
 
 # colour of border, background, text, indicator, and child_border
-client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
-client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused #333333 #333333 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
 client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background           #2f343f
