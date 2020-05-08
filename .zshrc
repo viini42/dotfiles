@@ -43,3 +43,4 @@ alias clock="tty-clock"
 alias picomb="picom --experimental-backends -b"
 
 
+function gi() { curl -sLw n https://www.gitignore.io/api/$@ ;}
