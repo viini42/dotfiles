@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-feh --bg-scale "$(find ~/.dotfiles/wallpapers/ -type f \( -iname \*.jpg -o -iname \*.png \) | sxiv -riot | head -n 1)"

@@ -7,7 +7,7 @@ export VISUAL=nvim
 export LANG=en_US.UTF-8
 
 # set key typing rate
-xset r rate 170 18
+# xset r rate 170 18
 
 # color man output
 man() {
@@ -28,6 +28,3 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
 export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
-
-$HOME/.fehbg &
-

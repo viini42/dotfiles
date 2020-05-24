@@ -15,7 +15,7 @@ export ZSH="/home/vinicius-devel/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -41,6 +41,18 @@ alias dotfiles='/usr/bin/git --git-dir=/home/vinicius-devel/.dotfiles/ --work-tr
 alias vim="nvim"
 alias clock="tty-clock"
 alias picomb="picom --experimental-backends -b"
+alias ls="colorls"
+
+clear
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+echo ''
+echo '  █████╗ ██████╗  ██████╗██╗  ██╗    ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗'
+echo ' ██╔══██╗██╔══██╗██╔════╝██║  ██║    ██║     ██║████╗  ██║██║   ██║╚██╗██╔╝'
+echo ' ███████║██████╔╝██║     ███████║    ██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ '
+echo ' ██╔══██║██╔══██╗██║     ██╔══██║    ██║     ██║██║╚██╗██║██║   ██║ ██╔██╗ '
+echo ' ██║  ██║██║  ██║╚██████╗██║  ██║    ███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗'
+echo ' ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝'
+echo ''
 
 
 function gi() { curl -sLw n https://www.gitignore.io/api/$@ ;}
