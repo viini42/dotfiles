@@ -42,6 +42,8 @@ alias vim="nvim"
 alias clock="tty-clock"
 alias picomb="picom --experimental-backends -b"
 alias ls="colorls"
+alias cat="bat"
+alias ccat="cat"
 
 clear
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
@@ -54,5 +56,6 @@ echo ' ██║  ██║██║  ██║╚██████╗██║
 echo ' ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝'
 echo ''
 
+GITSTATUS_LOG_LEVEL=DEBUG
 
 function gi() { curl -sLw n https://www.gitignore.io/api/$@ ;}
