@@ -77,7 +77,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ssh-agent)
+plugins=(
+  git 
+  ssh-agent
+  zsh-autosuggestions
+  fast-syntax-highlighting
+  zsh-autocomplete
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,6 +119,8 @@ export VCPKG_TOOLCHAIN=$HOME/bin/vcpkg/scripts/buildsystems/vcpkg.cmake
 
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
