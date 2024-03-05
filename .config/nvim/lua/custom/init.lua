@@ -5,3 +5,7 @@
 --   pattern = "*",
 --   command = "tabdo wincmd =",
 -- })
+
+vim.o.tabstop = 4
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
