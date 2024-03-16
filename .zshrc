@@ -41,6 +41,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 alias vi=nvim
 alias nv=nvim
+alias cd=z
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
