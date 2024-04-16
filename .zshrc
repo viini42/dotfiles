@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -18,10 +18,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git 
+  git-lfs
   ssh-agent
   zsh-autosuggestions
   fast-syntax-highlighting
-#  zsh-autocomplete
+  colored-man-pages
+  command-not-found
+  dirhistory
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -42,10 +45,13 @@ source $ZSH/oh-my-zsh.sh
 alias vi=nvim
 alias nv=nvim
 alias cd=z
+alias ls=colorls
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 eval "$(zoxide init zsh)"
+
+source $(dirname $(gem which colorls))/tab_complete.sh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
