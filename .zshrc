@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/share/gem/ruby/$(ruby -e 'print RUBY_VERSION')/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -62,14 +62,14 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=nvim
-export VCPKG_TOOLCHAIN=$HOME/bin/vcpkg/scripts/buildsystems/vcpkg.cmake
+#export VCPKG_TOOLCHAIN=$HOME/bin/vcpkg/scripts/buildsystems/vcpkg.cmake
 
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
+#export CC=/usr/bin/clang
+#export CXX=/usr/bin/clang++
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
